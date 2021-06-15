@@ -1,0 +1,16 @@
+<%= turbo_frame_tag :new_user do %>
+  <%= form_with model: @user do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.submit %>
+    <% if f.object.errors.any? %>
+      <p class="text-white bg-red-500">
+        <%= f.object.errors.join(',') %>
+      </p>
+    <% end %>
+  <% end %>
+<% end %>

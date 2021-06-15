@@ -1,0 +1,7 @@
+<div class="min-h-10 w-full flex px-8 bg-gray-300">
+  <p class="text-pink-800 mx-4"> username: </p><%= search_result.username %>
+  <p class="text-green-800 mx-4"> email: </p><%= search_result.email %>
+  <%= button_to notices_path(notice: {target_id: search_result.id }), data: { turbo_method: 'POST'} do %>
+    <i class="fas fa-bell ml-4 mr-1"></i> Notice
+  <% end %>
+</div>

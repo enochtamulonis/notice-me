@@ -1,0 +1,15 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer utilities {
+  .btn-primary {
+    @apply px-2 py-1 bg-blue-300 text-gray-100 hover:text-gray-200 focus:outline-none ring-0 focus:ring-4 focus:ring-blue-300
+  }
+
+  .btn-danger {
+    @apply bg-red-500 px-2 py-1 focus:outline-none text-gray-700
+  }
+}
+
+@import '@fortawesome/fontawesome-free';
