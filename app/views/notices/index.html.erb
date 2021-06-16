@@ -19,8 +19,3 @@
     <%= render partial: 'notice', collection: @my_notices, locals: { user: current_user } %>
   <% end %>
 </div>
-
-<div class="h-full w-full">
-  <%= turbo_frame_tag :new_user, src: :new_user do %>
-  <% end %>
-</div>

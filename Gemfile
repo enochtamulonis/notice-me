@@ -53,3 +53,5 @@ gem "hotwire-rails", "~> 0.1.3"
 gem "pry-rails", "~> 0.3.9"
 
 gem "faker", "~> 2.18"
+
+gem "responders", "~> 3.0"
