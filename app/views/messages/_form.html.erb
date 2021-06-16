@@ -1,0 +1,11 @@
+<% if defined?(errors) && errors.any? %>
+  <% errors.each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+<% end %>
+<%= form_with model: [chat, chat.messages.build], html: { class: 'flex whitespace-no-wrap' } do |f| %>
+  <div class="w-full flex flex-col">
+    <%= f.text_field :body, class: 'w-full', autocomplete: 'Type message' %>
+  </div>
+  <%= f.submit 'Send message', class: 'bg-blue-500 px-2 text-gray-100 cursor-pointer' %>
+<% end %>

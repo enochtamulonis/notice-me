@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :notices
-  resources :chats
+  resources :chats do
+    resources :messages
+  end
   post '/users/search', to: 'users#search', as: :user_search
   get '/users/easy_add', to: 'users#new', as: :new_user
   post '/users/easy_create', to: 'users#create', as: :users

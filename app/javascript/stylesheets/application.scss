@@ -10,6 +10,14 @@
   .btn-danger {
     @apply bg-red-500 px-2 py-1 focus:outline-none text-gray-700
   }
+
+  .message__mine {
+    @apply mr-auto text-left py-2 px-2 rounded bg-blue-500 text-gray-200
+  }
+
+  .message__other {
+    @apply ml-auto text-right py-2 px-2 rounded bg-gray-300 text-gray-900
+  }
 }
 
 @import '@fortawesome/fontawesome-free';

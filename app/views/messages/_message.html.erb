@@ -1,0 +1,8 @@
+<%= turbo_frame_tag dom_id(message) do %>
+<div class="mt-2" data-controller="message" data-message-mine-class="message__mine"
+      data-message-other-class="message__other" data-message-owner-id-value="<%= message.user.id %>"
+      data-message-container-selector-value="#<%= dom_id(message.chat, :container) %>">
+    <%= message.body %>
+    <p class="mt-2"><%= time_ago_in_words(message.created_at) %> by <%= message.user.username %></p>
+  </div>
+<% end %>
