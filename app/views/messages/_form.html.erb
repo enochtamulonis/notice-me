@@ -5,7 +5,7 @@
 <% end %>
 <%= form_with model: [chat, chat.messages.build], html: { class: 'flex whitespace-no-wrap' } do |f| %>
   <div class="w-full flex flex-col">
-    <%= f.text_field :body, class: 'w-full', autocomplete: 'Type message' %>
+    <%= f.text_field :body, class: 'ring-2 ring-gray-300 hover:ring-blue-500 w-full py-2 pl-1', autocomplete: 'Type message' %>
   </div>
-  <%= f.submit 'Send message', class: 'bg-blue-500 px-2 text-gray-100 cursor-pointer' %>
+  <%= f.submit 'Send message', class: 'bg-blue-500 px-2 text-gray-100 cursor-pointer ring-2 ring-blue-500 focus:ring-offset-2' %>
 <% end %>
