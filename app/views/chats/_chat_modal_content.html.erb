@@ -1,6 +1,5 @@
-<div class="h-full w-full pb-10" data-controller="modal-content"
+<div class="h-full w-full" data-controller="modal-content"
      data-modal-content-modal-selector-value="#main-modal">
-  <h2>This is the chatt</h2>
   <%= turbo_stream_from dom_id(chat), :messages %>
   <div class="h-full w-full flex flex-col overflow-y-scroll" id="<%= dom_id(chat, :container) %>">
     <%= turbo_frame_tag :messages do %>
