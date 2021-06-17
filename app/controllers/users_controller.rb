@@ -2,10 +2,10 @@
 # @Author: Enoch Tamulonis
 # @Date:   2021-06-15 10:43:15
 # @Last Modified by:   Enoch Tamulonis
-# @Last Modified time: 2021-06-15 16:15:43
+# @Last Modified time: 2021-06-16 20:34:41
 class UsersController < ApplicationController
   def search
-    @search_results = User.where('username LIKE ?', "%#{params[:q]}%")
+    @search_results = User.where('lower(username) LIKE lower(?)', "%#{params[:q]}%")
     render turbo_stream: turbo_stream.update('search-results',
       partial: 'search_result',
       collection: @search_results
