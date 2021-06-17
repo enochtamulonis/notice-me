@@ -1,7 +1,7 @@
 <div class="min-h-screen w-full bg-blue-300 flex justify-center pt-20">
   <div class="w-11/12 md:w-2/3 bg-gray-600 flex flex-col p-4">
     <h2 class="text-gray-100 text-center">Log in</h2>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'w-full md:w-2/3 lg:w-1/2 mx-auto text-gray-100'}, data: { remote: false, turbo: false }) do |f| %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'w-full md:w-2/3 lg:w-1/2 mx-auto text-gray-100'}, data: { turbo: false }) do |f| %>
       <div class="field">
         <p><%= f.label :login %><br />
         <p><%= f.text_field :login, class: 'w-full bg-transparent border-b-2 border-gray-300 outline-none focus:outline-none focus:border-blue-300' %></p>

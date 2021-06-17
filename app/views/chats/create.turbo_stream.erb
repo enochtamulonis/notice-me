@@ -1,0 +1,2 @@
+<%= turbo_stream.update('main-modal-content', partial: 'chat_modal_content.html.erb', locals: { chat: @chat }) %>
+<%= turbo_stream.update('main-modal-footer', partial: 'messages/form.html.erb', locals: { chat: @chat }) %>

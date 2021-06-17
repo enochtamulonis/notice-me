@@ -1,8 +1,10 @@
 <div class="w-full min-h-20 bg-gray-300 flex p-2" id="<%= dom_id(notice) %>">
   <% if defined?(user) && user == notice.target %>
     <p class="text-lg text-gray-800 mr-auto"> You have been noticed by <%= notice.user.username %></p>
-    <%= link_to '<i class="fa fa-comment"></i>'.html_safe, chats_path(chat: { target_id: notice.user.id }), class: 'bg-green-500 px-2 py-1 mr-6', data: { turbo_method: 'POST'} %>
-    <%= link_to "X", notice_path(notice), class: 'btn-danger', data: { turbo_method: "DELETE" } %>
+    <div class="h-8 flex">
+      <%= link_to '<i class="fa fa-comment"></i>'.html_safe, chats_path(chat: { target_id: notice.user.id }), class: 'bg-green-500 px-2 py-1 mr-6', data: { turbo_method: 'POST'} %>
+      <%= link_to "X", notice_path(notice), class: 'btn-danger', data: { turbo_method: "DELETE" } %>
+    </div>
   <% else %>
     <p class="text-lg text-gray-800 mr-auto"> <%= notice.target.username %> has been noticed by <%= notice.user.username%></p>
   <% end %>

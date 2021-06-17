@@ -1,17 +1,12 @@
-<div class="relative h-full w-full overflow-y-scroll" id="<%= dom_id(chat, :container) %>"
-     data-controller="modal-content" data-modal-content-modal-selector-value="#main-modal">
-  <div>
-    <h2>This is the chatt</h2>
-    <%= turbo_stream_from dom_id(chat), :messages %>
+<div class="h-full w-full pb-10" data-controller="modal-content"
+     data-modal-content-modal-selector-value="#main-modal">
+  <h2>This is the chatt</h2>
+  <%= turbo_stream_from dom_id(chat), :messages %>
+  <div class="h-full w-full flex flex-col overflow-y-scroll" id="<%= dom_id(chat, :container) %>">
     <%= turbo_frame_tag :messages do %>
-      <div class="flex flex-col">
         <% chat.messages.each do |message| %>
           <%= render "messages/message", message: message %>
         <% end %>
-      </div>
     <% end %>
-  </div>
-  <div class="mt-4 mb-4" id="new_chat_message">
-    <%= render "messages/form", chat: chat %>
   </div>
 </div>
