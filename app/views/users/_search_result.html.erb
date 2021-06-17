@@ -1,7 +1,14 @@
-<div class="min-h-10 w-full flex px-8 bg-gray-300">
-  <p class="text-pink-800 mx-4"> username: </p><%= search_result.username %>
-  <p class="text-green-800 mx-4"> email: </p><%= search_result.email %>
-  <%= button_to notices_path(notice: {target_id: search_result.id }), data: { turbo_method: 'POST'} do %>
-    <i class="fas fa-bell ml-4 mr-1"></i> Notice
-  <% end %>
+<div class="min-h-10 w-full flex flex-wrap px-8 bg-gray-300 border-2 border-pink-500 my-2">
+  <div class="flex w-full py-1">
+    <p class="text-pink-800 mx-4"> username: </p><%= search_result.username %>
+  </div>
+  <div class="flex w-full py-1">
+    <p class="text-green-800 mx-4"> email: </p><%= search_result.email %>
+  </div>
+  <div class="w-full flex justify-between">
+    <%= button_to notices_path(notice: {target_id: search_result.id }), data: { turbo_method: 'POST'} do %>
+      <i class="fas fa-bell ml-4 mr-1"></i> Notice
+    <% end %>
+    <%= link_to '<i class="fa fa-comment"></i>'.html_safe, chats_path(chat: { target_id: search_result.id }), class: 'bg-green-500 px-2 py-1 mr-6', data: { turbo_method: 'POST'} %>
+  </div>
 </div>

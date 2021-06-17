@@ -1,12 +1,12 @@
 <div class="min-h-screen w-full bg-gray-300 flex flex-col pt-20">
-  <div class="h-40 w-full flex flex-col items-center bg-gray-300">
+  <div class="min-h-40 w-full flex flex-col items-center bg-gray-300">
     <%= turbo_frame_tag :user_search do %>
       <%= form_with url: '/users/search', html: { class: 'flex mx-auto' } do |form| %>
         <%= form.text_field :q %>
         <%= form.submit 'search', class: 'btn-primary' %>
       <% end %>
+        <div id="search-results"></div>
     <% end %>
-    <div id="search-results"></div>
   </div>
   <h2 class="mt-10 text-lg text-gray-700">All Notices</h2>
   <%= turbo_stream_from :notices %>
